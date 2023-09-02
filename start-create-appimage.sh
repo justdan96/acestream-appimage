@@ -6,10 +6,11 @@ VER=`cat $HER/VERSION`
 ACE_VERSION=`cat $HER/ACE_VERSION`
 BUILD_TIME=$(date +_%d-%m-%Y_%H-%M)
 BUILD=${ACE_VERSION}${BUILD_TIME}_${VER}
-COMMAND="apt-get update && \
+COMMAND="echo 'deb http://archive.debian.org/debian stretch main' > /etc/apt/sources.list && \
+apt-get update && \
 apt-get install git fuse curl wget file binutils glib-2.0.0 -y && \
 cd opt/ && \
-git clone https://github.com/bro2020/acestream-appimage.git && \
+git clone https://github.com/justdan96/acestream-appimage.git && \
 cd acestream-appimage/ && \
 ACE_VERSION=\"$ACE_VERSION\" USER=$USER ./pkg2appimage.appimage recipes/acestream.yml"
 if [[ "$@" = "-h" ]] || [[ "$@" = "--help" ]];

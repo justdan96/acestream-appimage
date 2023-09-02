@@ -2,7 +2,7 @@ app: acestream-$ACE_VERSION
 ingredients:
   dist: stretch
   sources:
-    - deb http://deb.debian.org/debian stretch main
+    - deb http://archive.debian.org/debian stretch main
   packages:
     - curl
     - libpython2.7
@@ -12,8 +12,8 @@ ingredients:
     - python-m2crypto
     - python-pkg-resources
   script:
-    - curl --silent https://download.acestream.media/linux/acestream_3.1.49_debian_9.9_x86_64.tar.gz | tar --extract --gzip
-    - curl https://iwf1.com/scrapekod/icons/script.module.torrent.ts.png -L -o acestream-$ACE_VERSION.png
+    - curl -L https://download.acestream.media/linux/acestream_3.1.74_debian_9.9_x86_64.tar.gz | tar --extract --gzip
+    - curl https://m.drawgaze.online/img/md_home_logo.png -L -o acestream-$ACE_VERSION.png
     - whereis python
 
 script:
