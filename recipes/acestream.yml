@@ -12,8 +12,8 @@ ingredients:
     - python-m2crypto
     - python-pkg-resources
   script:
-    - curl -L https://download.acestream.media/linux/acestream_3.1.74_debian_9.9_x86_64.tar.gz | tar --extract --gzip
-    - curl https://m.drawgaze.online/img/md_home_logo.png -L -o acestream-$ACE_VERSION.png
+    - curl -k -L https://download.acestream.media/linux/acestream_3.1.74_debian_9.9_x86_64.tar.gz | tar --extract --gzip
+    - curl -k https://m.drawgaze.online/img/md_home_logo.png -L -o acestream-$ACE_VERSION.png
     - whereis python
 
 script:
